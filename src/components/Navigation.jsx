@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import logoImage from "../images/homepage/algo-coffee-logo-white.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import {
   Nav,
   Logo,
-  NavMenuItem,
+  NavMenuItemLink,
   NavMenuItemSpan,
   ShoppingCartButton,
 } from "../styled/Navigation-styling";
@@ -13,16 +14,20 @@ import {
 const Navigation = () => {
   return (
     <Nav>
-      <Logo src={logoImage} alt="Algo Coffee Logo" />
-      <NavMenuItem>
+      <Link to="/">
+        <Logo src={logoImage} alt="Algo Coffee Logo" />
+      </Link>
+      <NavMenuItemLink to="/shop">
         <NavMenuItemSpan>SHOP</NavMenuItemSpan>
-      </NavMenuItem>
-      <NavMenuItem>
+      </NavMenuItemLink>
+      <NavMenuItemLink to="/menu">
         <NavMenuItemSpan>MENU</NavMenuItemSpan>
-      </NavMenuItem>
-      <ShoppingCartButton>
-        <FontAwesomeIcon icon={faShoppingCart} />
-      </ShoppingCartButton>
+      </NavMenuItemLink>
+      <NavMenuItemLink to="/cart">
+        <ShoppingCartButton>
+          <FontAwesomeIcon icon={faShoppingCart} />
+        </ShoppingCartButton>
+      </NavMenuItemLink>
     </Nav>
   );
 };

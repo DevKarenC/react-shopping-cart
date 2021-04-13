@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Nav = styled.nav`
   display: grid;
@@ -12,13 +13,14 @@ const Logo = styled.img`
   cursor: pointer;
 `;
 
-const NavMenuItem = styled.a`
+const NavMenuItemLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Raleway", sans-serif;
   font-size: 1.25rem;
   letter-spacing: 1px;
+  text-decoration: none;
   color: #000000;
   cursor: pointer;
 `;
@@ -42,4 +44,4 @@ const ShoppingCartButton = styled.button`
   }
 `;
 
-export { Nav, Logo, NavMenuItem, NavMenuItemSpan, ShoppingCartButton };
+export { Nav, Logo, NavMenuItemLink, NavMenuItemSpan, ShoppingCartButton };
