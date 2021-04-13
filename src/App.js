@@ -1,11 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
+import BannerModal from "./components/BannerModal";
 
 const App = () => {
   return (
     <Router>
       <Navigation />
+      <BannerModal />
       <Switch>
         <Route exact path="/">
           {/* <Home /> */}

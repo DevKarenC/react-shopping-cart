@@ -3,32 +3,26 @@ import { Link } from "react-router-dom";
 import logoImage from "../images/homepage/algo-coffee-logo-white.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import {
-  Nav,
-  Logo,
-  NavMenuItemLink,
-  NavMenuItemSpan,
-  ShoppingCartButton,
-} from "../styled/Navigation-styling";
+import * as S from "../styled/Navigation-styling";
 
 const Navigation = () => {
   return (
-    <Nav>
+    <S.Nav>
       <Link to="/">
-        <Logo src={logoImage} alt="Algo Coffee Logo" />
+        <S.Logo src={logoImage} alt="Algo Coffee Logo" />
       </Link>
-      <NavMenuItemLink to="/shop">
-        <NavMenuItemSpan>SHOP</NavMenuItemSpan>
-      </NavMenuItemLink>
-      <NavMenuItemLink to="/menu">
-        <NavMenuItemSpan>MENU</NavMenuItemSpan>
-      </NavMenuItemLink>
-      <NavMenuItemLink to="/cart">
-        <ShoppingCartButton>
+      <S.NavMenuItemLink to="/shop">
+        <S.NavMenuItemSpan>SHOP</S.NavMenuItemSpan>
+      </S.NavMenuItemLink>
+      <S.NavMenuItemLink to="/menu">
+        <S.NavMenuItemSpan>MENU</S.NavMenuItemSpan>
+      </S.NavMenuItemLink>
+      <S.NavMenuItemLink to="/cart">
+        <S.ShoppingCartButton>
           <FontAwesomeIcon icon={faShoppingCart} />
-        </ShoppingCartButton>
-      </NavMenuItemLink>
-    </Nav>
+        </S.ShoppingCartButton>
+      </S.NavMenuItemLink>
+    </S.Nav>
   );
 };
 
