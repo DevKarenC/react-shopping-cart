@@ -17,8 +17,8 @@ const NavMenuItemLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Raleway", sans-serif;
-  font-size: 1.25rem;
+  font-family: "Barlow", sans-serif;
+  font-size: 1.5rem;
   letter-spacing: 1px;
   text-decoration: none;
   color: #000000;
