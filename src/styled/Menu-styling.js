@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+/* Menu Page Styling */
 const MenuSection = styled.div`
   display: grid;
   justify-items: center;
@@ -7,6 +8,8 @@ const MenuSection = styled.div`
   gap: 2vw;
   margin: 2rem;
 `;
+
+/* MenuItemCard Styling */
 
 const MenuItemCard = styled.div`
   min-width: 350px;

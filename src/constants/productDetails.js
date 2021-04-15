@@ -8,7 +8,7 @@ import frenchPress from "../images/products/french-press.jpg";
 import mokaPot from "../images/products/moka-pot.jpg";
 import woodenGrinder from "../images/products/wooden-grinder.jpg";
 
-export const ProductDetails = [
+export const productDetails = [
   {
     id: 0,
     imgSrc: adventureCup,
