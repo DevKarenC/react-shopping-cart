@@ -10,8 +10,15 @@ function ProductCard({ product }) {
     addToCart();
   };
 
+  const updateQuantity = (e) => {
+    setQuantity(e.target.value);
+  };
+
   const decrementQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity - 1);
+    setQuantity((prevQuantity) => {
+      if (prevQuantity > 2) return prevQuantity - 1;
+      return 1;
+    });
   };
 
   const incrementQuantity = () => {
@@ -41,7 +48,12 @@ function ProductCard({ product }) {
           <S.ProductQuantityButton onClick={decrementQuantity}>
             −
           </S.ProductQuantityButton>
-          <S.ProductQuantityInput type="number" value={quantity} />
+          <S.ProductQuantityInput
+            type="number"
+            value={quantity}
+            min="1"
+            onChange={updateQuantity}
+          />
           <S.ProductQuantityButton onClick={incrementQuantity}>
             +
           </S.ProductQuantityButton>
