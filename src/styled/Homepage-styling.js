@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
-const MainSection = styled.div`
+const HomepageSection = styled.div`
   display: inline-block;
   position: relative;
 `;
 
-const MainImage = styled.img`
+const HomepageImage = styled.img`
   display: block;
   height: auto;
   width: 100vw;
 `;
 
-const MainText = styled.p`
+const HomepageText = styled.p`
   position: absolute;
   top: 28%;
   transform: translate(7%);
@@ -26,4 +26,4 @@ const MainText = styled.p`
   line-height: 1.4285em;
 `;
 
-export { MainSection, MainImage, MainText };
+export { HomepageSection, HomepageImage, HomepageText };
