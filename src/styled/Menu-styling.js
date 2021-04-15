@@ -3,19 +3,16 @@ import styled from "styled-components";
 const MenuSection = styled.div`
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  /* grid-template-areas:
-    "mn mn mn"
-    "mn mn mn"; */
-  border-bottom: 1px solid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2vw;
+  margin: 2rem;
 `;
 
 const MenuItemCard = styled.div`
   min-width: 350px;
   max-width: 350px;
   height: auto;
-  box-shadow: 0 4px 8px gray;
+  box-shadow: 0 4px 8px #e2dad5;
   margin: 30px;
   padding-bottom: 0.75rem;
 `;
@@ -27,14 +24,15 @@ const CoffeeImage = styled.img`
 `;
 
 const MenuItemDescription = styled.div`
-  font-family: "Alegreya", serif;
-  font-size: 1.25rem;
-  letter-spacing: 1px;
-  line-height: 2rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  font-family: "Barlow", sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  line-height: 2rem;
+  text-transform: uppercase;
   margin-top: 0.5rem;
 `;
 
