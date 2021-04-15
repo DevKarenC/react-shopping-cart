@@ -61,7 +61,7 @@ const ProductCard = styled.div`
 
 const ProductImage = styled.img`
   width: 350px;
-  height: auto;
+  height: 350px;
   cursor: pointer;
 `;
 
@@ -76,6 +76,47 @@ const ProductBadge = styled.div`
   background-color: #826c55;
 `;
 
+const ProductDetailsContainer = styled.div`
+  font-family: "Barlow", sans-serif;
+  font-size: 1.25rem;
+  text-align: center;
+  letter-spacing: 1px;
+`;
+
+const ProductName = styled(ProductDetailsContainer)`
+  margin: 0.75rem 0;
+`;
+
+const ProductPrice = styled(ProductName)`
+  margin-bottom: 1.5rem;
+`;
+
+const ProductQuantity = styled(ProductDetailsContainer)`
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+`;
+
+const ProductQuantityButton = styled.button`
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.25rem;
+  color: #fff;
+  background-color: #8c6d56;
+  border: 0;
+  width: 2rem;
+`;
+
+const ProductQuantityInput = styled.input`
+  color: #000;
+  font-size: 1.25rem;
+  text-align: center;
+  width: 4rem;
+  height: 1.5rem;
+  border: 2px solid #8c6d56;
+  outline: 0;
+  appearance: textfield;
+`;
+
 export {
   ShopSection,
   ProductSection,
@@ -86,4 +127,10 @@ export {
   ProductCard,
   ProductImage,
   ProductBadge,
+  ProductDetailsContainer,
+  ProductName,
+  ProductPrice,
+  ProductQuantity,
+  ProductQuantityButton,
+  ProductQuantityInput,
 };

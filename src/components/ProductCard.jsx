@@ -25,23 +25,20 @@ function ProductCard({ product }) {
     <div>
       <S.ProductCard>
         {renderProductBadge()}
-        <div className="product-image">
-          <S.ProductImage src={product.imgSrc} alt={product.imgAlt} />
-        </div>
-        <div className="product-description">
-          <div className="product-name">{product.name}</div>
-          <div className="product-price">$ {product.price}</div>
-        </div>
-        <div className="product-options">
-          <div className="product-quantity">
-            <span>Quantity</span>
-            <input type="number" />
-          </div>
-          <div>
-            <button onClick={onClickAddToCart} className="add-to-cart">
-              ADD TO CART
-            </button>
-          </div>
+        <S.ProductImage src={product.imgSrc} alt={product.imgAlt} />
+        <S.ProductDetailsContainer>
+          <S.ProductName>{product.name}</S.ProductName>
+          <S.ProductPrice>$ {product.price}</S.ProductPrice>
+        </S.ProductDetailsContainer>
+        <S.ProductQuantity>
+          <S.ProductQuantityButton>−</S.ProductQuantityButton>
+          <S.ProductQuantityInput type="number" placeholder="1" />
+          <S.ProductQuantityButton>+</S.ProductQuantityButton>
+        </S.ProductQuantity>
+        <div>
+          <button onClick={onClickAddToCart} className="add-to-cart">
+            ADD TO CART
+          </button>
         </div>
       </S.ProductCard>
     </div>
