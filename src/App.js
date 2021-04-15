@@ -1,16 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import * as S from "./styled/Global-styling";
 import Navigation from "./components/Navigation";
 import BannerModal from "./components/BannerModal";
+import Homepage from "./components/Homepage";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
     <Router>
+      <S.GlobalStyle />
       <Navigation />
       <BannerModal />
       <Switch>
         <Route exact path="/">
-          {/* <Home /> */}
+          <Homepage />
         </Route>
         <Route exact path="/shop">
           {/* <Shop /> */}
@@ -22,6 +26,7 @@ const App = () => {
           {/* <Cart /> */}
         </Route>
       </Switch>
+      <Footer />
     </Router>
   );
 };

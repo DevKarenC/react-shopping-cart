@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 import * as S from "../styled/BannerModal-styling";
 import covidMessage from "../constants/covidMessage";
