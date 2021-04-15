@@ -4,6 +4,7 @@ import * as S from "./styled/Global-styling";
 import Navigation from "./components/Navigation";
 import BannerModal from "./components/BannerModal";
 import Homepage from "./components/Homepage";
+import Menu from "./components/Menu";
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -20,7 +21,7 @@ const App = () => {
           {/* <Shop /> */}
         </Route>
         <Route exact path="/menu">
-          {/* <Menu /> */}
+          <Menu />
         </Route>
         <Route exact path="/cart">
           {/* <Cart /> */}
