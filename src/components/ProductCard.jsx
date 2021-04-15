@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as S from "../styled/Shop-styling";
 
-function ProductCard(props) {
+function ProductCard({ product }) {
   const [quantity, setQuantity] = useState(() => 1);
   const [cartItems, addToCart] = useState(() => []);
 
@@ -11,38 +11,26 @@ function ProductCard(props) {
     addToCart();
   };
 
-  const isLimited = () => {
-    return props.product.limited ? (
-      <>
-        <span>Limited </span>
-      </>
-    ) : null;
-  };
-
-  const isOnSale = () => {
-    return props.product.onSale ? (
-      <>
-        <span>On Sale</span>
-      </>
-    ) : null;
+  const renderProductBadge = () => {
+    if (product.limited && product.onSale) {
+      return <S.ProductBadge>Limited & On Sale</S.ProductBadge>;
+    } else if (product.limited) {
+      return <S.ProductBadge>Limited</S.ProductBadge>;
+    } else if (product.onSale) {
+      return <S.ProductBadge>On Sale</S.ProductBadge>;
+    }
   };
 
   return (
     <div>
       <S.ProductCard>
+        {renderProductBadge()}
         <div className="product-image">
-          <S.ProductImage
-            src={props.product.imgSrc}
-            alt={props.product.imgAlt}
-          />
+          <S.ProductImage src={product.imgSrc} alt={product.imgAlt} />
         </div>
         <div className="product-description">
-          <div className="product-name">{props.product.name}</div>
-          <div className="product-price">$ {props.product.price}</div>
-          <div className="product-specials">
-            {isLimited()}
-            {isOnSale()}
-          </div>
+          <div className="product-name">{product.name}</div>
+          <div className="product-price">$ {product.price}</div>
         </div>
         <div className="product-options">
           <div className="product-quantity">

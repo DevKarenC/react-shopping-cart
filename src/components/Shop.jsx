@@ -24,24 +24,23 @@ function Shop() {
   };
 
   return (
-    <div>
-      <div>
-        <div>{productDetails.length} Results</div>
-        <div>
-          Sort by
-          <button onClick={() => onClickSetSortType("sortByLimited")}>
+    <S.ShopSection>
+      <S.FilterSection>
+        <S.Results>{productDetails.length} Results</S.Results>
+        <S.Filters>
+          Sort by:
+          <S.FilterButton onClick={() => onClickSetSortType("sortByLimited")}>
             Limited
-          </button>
-          <button onClick={() => onClickSetSortType("sortByOnSale")}>
+          </S.FilterButton>
+          <S.FilterButton onClick={() => onClickSetSortType("sortByOnSale")}>
             On Sale
-          </button>
-          <button onClick={() => onClickSetSortType("sortByPrice")}>
+          </S.FilterButton>
+          <S.FilterButton onClick={() => onClickSetSortType("sortByPrice")}>
             Price Low to High
-          </button>
-        </div>
-      </div>
+          </S.FilterButton>
+        </S.Filters>
+      </S.FilterSection>
       <S.ProductSection>
-        {/* <div className="product-cards-inner-grid"> */}
         {sortType.map((product) => {
           return (
             <div>
@@ -49,9 +48,8 @@ function Shop() {
             </div>
           );
         })}
-        {/* </div> */}
       </S.ProductSection>
-    </div>
+    </S.ShopSection>
   );
 }
 
