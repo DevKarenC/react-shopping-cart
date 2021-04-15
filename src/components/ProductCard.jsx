@@ -7,8 +7,15 @@ function ProductCard({ product }) {
 
   const onClickAddToCart = () => {
     const cartItemsCopy = cartItems.slice();
-
     addToCart();
+  };
+
+  const decrementQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity - 1);
+  };
+
+  const incrementQuantity = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
   };
 
   const renderProductBadge = () => {
@@ -31,9 +38,13 @@ function ProductCard({ product }) {
           <S.ProductPrice>$ {product.price}</S.ProductPrice>
         </S.ProductDetailsContainer>
         <S.ProductQuantity>
-          <S.ProductQuantityButton>−</S.ProductQuantityButton>
-          <S.ProductQuantityInput type="number" placeholder="1" />
-          <S.ProductQuantityButton>+</S.ProductQuantityButton>
+          <S.ProductQuantityButton onClick={decrementQuantity}>
+            −
+          </S.ProductQuantityButton>
+          <S.ProductQuantityInput type="number" value={quantity} />
+          <S.ProductQuantityButton onClick={incrementQuantity}>
+            +
+          </S.ProductQuantityButton>
         </S.ProductQuantity>
         <div>
           <button onClick={onClickAddToCart} className="add-to-cart">
