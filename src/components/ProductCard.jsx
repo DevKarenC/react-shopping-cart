@@ -1,14 +1,8 @@
 import React, { useState } from "react";
 import * as S from "../styled/Shop-styling";
 
-function ProductCard({ product }) {
+function ProductCard({ product, handleAddToCart }) {
   const [quantity, setQuantity] = useState(() => 1);
-  const [cartItems, addToCart] = useState(() => []);
-
-  const onClickAddToCart = () => {
-    const cartItemsCopy = cartItems.slice();
-    addToCart();
-  };
 
   const updateQuantity = (e) => {
     setQuantity(e.target.value);
@@ -36,33 +30,35 @@ function ProductCard({ product }) {
   };
 
   return (
-    <div>
-      <S.ProductCard>
-        {renderProductBadge()}
-        <S.ProductImage src={product.imgSrc} alt={product.imgAlt} />
-        <S.ProductDetailsContainer>
-          <S.ProductName>{product.name}</S.ProductName>
-          <S.ProductPrice>$ {product.price}</S.ProductPrice>
-        </S.ProductDetailsContainer>
-        <S.ProductQuantity>
-          <S.ProductQuantityButton onClick={decrementQuantity}>
-            −
-          </S.ProductQuantityButton>
-          <S.ProductQuantityInput
-            type="number"
-            value={quantity}
-            min="1"
-            onChange={updateQuantity}
-          />
-          <S.ProductQuantityButton onClick={incrementQuantity}>
-            +
-          </S.ProductQuantityButton>
-        </S.ProductQuantity>
-        <S.AddToCartButton onClick={onClickAddToCart} className="add-to-cart">
-          ADD TO CART
-        </S.AddToCartButton>
-      </S.ProductCard>
-    </div>
+    <S.ProductCard>
+      {renderProductBadge()}
+      <S.ProductImage src={product.imgSrc} alt={product.imgAlt} />
+      <S.ProductDetailsContainer>
+        <S.ProductName>{product.name}</S.ProductName>
+        <S.ProductPrice>$ {product.price}</S.ProductPrice>
+      </S.ProductDetailsContainer>
+      <S.ProductQuantity>
+        <S.ProductQuantityButton onClick={decrementQuantity}>
+          −
+        </S.ProductQuantityButton>
+        <S.ProductQuantityInput
+          type="number"
+          value={quantity}
+          min="1"
+          onChange={updateQuantity}
+        />
+        <S.ProductQuantityButton onClick={incrementQuantity}>
+          +
+        </S.ProductQuantityButton>
+      </S.ProductQuantity>
+      <S.AddToCartButton
+        onClick={() =>
+          handleAddToCart(product.name, product.id, product.price, quantity)
+        }
+      >
+        Add to Cart
+      </S.AddToCartButton>
+    </S.ProductCard>
   );
 }
 
