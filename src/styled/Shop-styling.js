@@ -51,6 +51,10 @@ const FilterButton = styled.button`
 /* ProductCard Styling */
 
 const ProductCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-width: 350px;
   max-width: 350px;
   height: auto;
@@ -72,6 +76,7 @@ const ProductBadge = styled.div`
   text-align: center;
   letter-spacing: 1px;
   padding: 0.25rem 0;
+  width: 350px;
   color: #ffffff;
   background-color: #826c55;
 `;
@@ -88,12 +93,11 @@ const ProductName = styled(ProductDetailsContainer)`
 `;
 
 const ProductPrice = styled(ProductName)`
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.25rem;
 `;
 
 const ProductQuantity = styled(ProductDetailsContainer)`
   display: flex;
-  justify-content: center;
   margin: 1rem 0;
 `;
 
@@ -103,7 +107,8 @@ const ProductQuantityButton = styled.button`
   color: #fff;
   background-color: #8c6d56;
   border: 0;
-  width: 2rem;
+  width: 2.9rem;
+  cursor: pointer;
 `;
 
 const ProductQuantityInput = styled.input`
@@ -115,6 +120,24 @@ const ProductQuantityInput = styled.input`
   border: 2px solid #8c6d56;
   outline: 0;
   appearance: textfield;
+`;
+
+const AddToCartButton = styled.button`
+  border: 1px solid #f2edde;
+  background-color: #f2edde;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1.25rem;
+  padding: 0.75rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #8c6d56;
+    transition: all 0.4s ease-in-out;
+  }
 `;
 
 export {
@@ -133,4 +156,5 @@ export {
   ProductQuantity,
   ProductQuantityButton,
   ProductQuantityInput,
+  AddToCartButton,
 };

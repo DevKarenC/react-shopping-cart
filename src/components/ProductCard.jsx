@@ -58,11 +58,9 @@ function ProductCard({ product }) {
             +
           </S.ProductQuantityButton>
         </S.ProductQuantity>
-        <div>
-          <button onClick={onClickAddToCart} className="add-to-cart">
-            ADD TO CART
-          </button>
-        </div>
+        <S.AddToCartButton onClick={onClickAddToCart} className="add-to-cart">
+          ADD TO CART
+        </S.AddToCartButton>
       </S.ProductCard>
     </div>
   );
