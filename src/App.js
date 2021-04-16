@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import BannerModal from "./components/BannerModal";
 import Homepage from "./components/Homepage";
 import Shop from "./components/Shop";
 import Menu from "./components/Menu";
-// import Cart from "./components/Cart"
+import Cart from "./components/Cart";
 import Footer from "./components/Footer";
 import * as S from "./styled/Global-styling";
 
 const App = () => {
-  const handleAddToCart = (name, id, qty) => {
-    console.log({ name, id, qty });
+  const [cartItems, setCartItems] = useState(() => []);
+
+  const handleAddToCart = (name, id, price, qty) => {
+    setCartItems((prevCartItems) => [
+      ...prevCartItems,
+      { name, id, price, qty },
+    ]);
   };
+
+  // display pop-up for 3 seconds to let user know the item has been successfully added to the cart
+  const addToCartSuccessPopup = () => {
+    // console.log("clicked!");
+  };
+
+  // update the quantity badge next to the mini cart icon on the nav bar
+  // const updateMiniCartBadge = () => {}
+
+  // const updateCartItems = () => {}
 
   return (
     <Router>
@@ -24,13 +39,16 @@ const App = () => {
           <Homepage />
         </Route>
         <Route exact path="/shop">
-          <Shop handleAddToCart={handleAddToCart} />
+          <Shop
+            handleAddToCart={handleAddToCart}
+            addToCartSuccessPopup={addToCartSuccessPopup}
+          />
         </Route>
         <Route exact path="/menu">
           <Menu />
         </Route>
         <Route exact path="/cart">
-          {/* <Cart /> */}
+          <Cart cartItems={cartItems} />
         </Route>
       </Switch>
       <Footer />
