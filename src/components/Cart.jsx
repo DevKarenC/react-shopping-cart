@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-const Cart = ({ cartItems }) => {
+const Cart = () => {
   //   const [cartItems, setCartItems] = useState(() => {});
-  console.log(cartItems);
   return (
     <div>
       <div></div>

@@ -19,6 +19,11 @@ const App = () => {
     ]);
   };
 
+  // when the user clicks on the cart icon, they should see the list of cartItems
+  const getCartItems = () => {
+    console.log(cartItems);
+  };
+
   // display pop-up for 3 seconds to let user know the item has been successfully added to the cart
   const addToCartSuccessPopup = () => {
     // console.log("clicked!");
@@ -48,7 +53,7 @@ const App = () => {
           <Menu />
         </Route>
         <Route exact path="/cart">
-          <Cart cartItems={cartItems} />
+          <Cart />
         </Route>
       </Switch>
       <Footer />
