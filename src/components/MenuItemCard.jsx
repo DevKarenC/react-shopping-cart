@@ -5,7 +5,7 @@ import * as S from "../styled/Menu-styling";
 const MenuItemCard = ({ menuItem }) => {
   const [isFlipped, setIsFlipped] = useState(() => false);
 
-  const hotCoffeeOnly = () => {
+  const renderMenuItemPrice = () => {
     return menuItem.priceIced ? (
       <>
         <span>Iced $ </span> {menuItem.priceIced}
@@ -54,7 +54,7 @@ const MenuItemCard = ({ menuItem }) => {
               <span>Hot $ </span>
               {menuItem.priceHot}
             </S.MenuItemPrice>
-            <S.MenuItemPrice>{hotCoffeeOnly()}</S.MenuItemPrice>
+            <S.MenuItemPrice>{renderMenuItemPrice()}</S.MenuItemPrice>
           </>
         </S.MenuItemDescription>
       </S.MenuItemCard>
