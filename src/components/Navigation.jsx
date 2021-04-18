@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import NavCartBadge from "./NavCartBadge";
 import logoImage from "../images/homepage/algo-coffee-logo-white.png";
 import * as S from "../styled/Navigation-styling";
 
@@ -20,6 +21,7 @@ const Navigation = () => {
       <S.NavMenuItemLink to="/cart">
         <S.ShoppingCartButton>
           <FontAwesomeIcon icon={faShoppingCart} />
+          <NavCartBadge />
         </S.ShoppingCartButton>
       </S.NavMenuItemLink>
     </S.Nav>

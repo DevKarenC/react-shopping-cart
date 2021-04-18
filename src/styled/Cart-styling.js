@@ -45,9 +45,29 @@ const ContinueShoppingButton = styled.button`
 
 /* ITEMS IN CART PAGE */
 
+/* NAV CART ICON BADGE */
+const Badge = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 35px;
+  height: 35px;
+  background-color: #8c6d56;
+  color: #fff;
+  border: 1px solid #8c6d56;
+  border-radius: 50%;
+  font-family: "Barlow", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+`;
+
 export {
   EmptyCartPageSection,
   EmptyCartImage,
   EmptyCartText,
   ContinueShoppingButton,
+  Badge,
 };

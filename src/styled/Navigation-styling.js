@@ -33,8 +33,15 @@ const NavMenuItemSpan = styled.span`
 `;
 
 const ShoppingCartButton = styled.button`
-  border: none;
-  background: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  border-radius: 50%;
+  background-color: #f2edde;
   cursor: pointer;
   font-size: 1.25rem;
   color: #7b4819;
