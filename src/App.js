@@ -12,10 +12,22 @@ import * as S from "./styled/Global-styling";
 const App = () => {
   const [cartItems, setCartItems] = useState(() => []);
 
-  // const handleAddToCart = (id, name, price, qty, imgSrc, imgAlt) => {
   const handleAddToCart = (item, qty) => {
     setCartItems((prevCartItems) => {
-      return [...prevCartItems, { ...item, qty }];
+      // if the same item already exists in the cart, update quantity
+      if (prevCartItems.find((el) => el.id === item.id)) {
+        const uniqueItems = prevCartItems.filter(
+          (prevItem) => prevItem.id !== item.id
+        );
+        const duplicateItem = prevCartItems.filter(
+          (prevItem) => prevItem.id === item.id
+        );
+        duplicateItem[0].qty += qty;
+        return [...uniqueItems, ...duplicateItem];
+        // if there are no duplicate items, append the new item to the existing cart items
+      } else {
+        return [...prevCartItems, { ...item, qty }];
+      }
     });
   };
 
