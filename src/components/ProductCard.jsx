@@ -53,7 +53,7 @@ function ProductCard({ product, handleAddToCart, addToCartSuccessPopup }) {
       </S.ProductQuantity>
       <S.AddToCartButton
         onClick={() => {
-          handleAddToCart(product.name, product.id, product.price, quantity);
+          handleAddToCart(product, quantity);
           addToCartSuccessPopup();
         }}
       >

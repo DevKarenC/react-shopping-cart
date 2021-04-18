@@ -12,11 +12,11 @@ import * as S from "./styled/Global-styling";
 const App = () => {
   const [cartItems, setCartItems] = useState(() => []);
 
-  const handleAddToCart = (name, id, price, qty) => {
-    setCartItems((prevCartItems) => [
-      ...prevCartItems,
-      { name, id, price, qty },
-    ]);
+  // const handleAddToCart = (id, name, price, qty, imgSrc, imgAlt) => {
+  const handleAddToCart = (item, qty) => {
+    setCartItems((prevCartItems) => {
+      return [...prevCartItems, { ...item, qty }];
+    });
   };
 
   // allow the Cart component to retrieve the cartItems from App

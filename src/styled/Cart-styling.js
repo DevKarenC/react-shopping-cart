@@ -45,6 +45,15 @@ const ContinueShoppingButton = styled.button`
 
 /* ITEMS IN CART PAGE */
 
+const CartWithItemsPageSection = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
+const CartItemsSection = styled.div``;
+
+const TotalAmountSection = styled.div``;
+
 /* NAV CART ICON BADGE */
 const Badge = styled.span`
   display: flex;
@@ -69,5 +78,8 @@ export {
   EmptyCartImage,
   EmptyCartText,
   ContinueShoppingButton,
+  CartWithItemsPageSection,
+  CartItemsSection,
+  TotalAmountSection,
   Badge,
 };

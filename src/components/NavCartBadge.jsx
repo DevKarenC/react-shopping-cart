@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import * as S from "../styled/Cart-styling";
 
 const NavCartBadge = ({ updateNavCartBadge }) => {
