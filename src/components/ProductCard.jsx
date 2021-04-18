@@ -5,7 +5,7 @@ function ProductCard({ product, handleAddToCart, addToCartSuccessPopup }) {
   const [quantity, setQuantity] = useState(() => 1);
 
   const updateQuantity = (e) => {
-    setQuantity(e.target.value);
+    setQuantity(Number(e.target.value));
   };
 
   const decrementQuantity = () => {
