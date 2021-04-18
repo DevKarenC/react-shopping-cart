@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as S from "../styled/Cart-styling";
 
-const NavCartBadge = () => {
-  return <S.Badge>99</S.Badge>;
+const NavCartBadge = ({ updateNavCartBadge }) => {
+  return <S.Badge>{updateNavCartBadge()}</S.Badge>;
 };
 
 export default NavCartBadge;

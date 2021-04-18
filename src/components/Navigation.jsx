@@ -6,7 +6,7 @@ import NavCartBadge from "./NavCartBadge";
 import logoImage from "../images/homepage/algo-coffee-logo-white.png";
 import * as S from "../styled/Navigation-styling";
 
-const Navigation = () => {
+const Navigation = ({ updateNavCartBadge }) => {
   return (
     <S.Nav>
       <Link to="/">
@@ -21,7 +21,7 @@ const Navigation = () => {
       <S.NavMenuItemLink to="/cart">
         <S.ShoppingCartButton>
           <FontAwesomeIcon icon={faShoppingCart} />
-          <NavCartBadge />
+          <NavCartBadge updateNavCartBadge={updateNavCartBadge} />
         </S.ShoppingCartButton>
       </S.NavMenuItemLink>
     </S.Nav>

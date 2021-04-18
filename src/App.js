@@ -30,12 +30,13 @@ const App = () => {
   };
 
   // update the quantity badge next to the mini cart icon on the nav bar
-  // const updateMiniCartBadge = () => {}
+  const updateNavCartBadge = () =>
+    cartItems.reduce((total, cur) => total + cur.qty, 0);
 
   return (
     <Router>
       <S.GlobalStyle />
-      <Navigation />
+      <Navigation updateNavCartBadge={updateNavCartBadge} />
       <BannerModal />
       <Switch>
         <Route exact path="/">
