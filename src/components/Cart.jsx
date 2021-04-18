@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import EmptyCartPage from "./EmptyCartPage";
 
 const Cart = ({ getCartItems }) => {
   const [cartItems, setCartItems] = useState(() => []);
@@ -11,11 +12,7 @@ const Cart = ({ getCartItems }) => {
     updateCart();
   });
 
-  return (
-    <div>
-      <div>{cartItems[0].name}</div>
-    </div>
-  );
+  return <div>{cartItems.length === 0 ? <EmptyCartPage /> : null}</div>;
 };
 
 export default Cart;

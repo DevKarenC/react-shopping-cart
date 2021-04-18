@@ -19,9 +19,8 @@ const App = () => {
     ]);
   };
 
-  // when the user clicks on the cart icon, they should see the list of cartItems
+  // allow the Cart component to retrieve the cartItems from App
   const getCartItems = () => {
-    console.log(cartItems);
     return cartItems;
   };
 
@@ -32,8 +31,6 @@ const App = () => {
 
   // update the quantity badge next to the mini cart icon on the nav bar
   // const updateMiniCartBadge = () => {}
-
-  // const updateCartItems = () => {}
 
   return (
     <Router>
