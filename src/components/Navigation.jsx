@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logoImage from "../images/homepage/algo-coffee-logo-white.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import logoImage from "../images/homepage/algo-coffee-logo-white.png";
 import * as S from "../styled/Navigation-styling";
 
 const Navigation = () => {

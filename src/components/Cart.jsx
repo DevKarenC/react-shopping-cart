@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from "react";
 
-const Cart = () => {
-  //   const [cartItems, setCartItems] = useState(() => {});
+const Cart = ({ getCartItems }) => {
+  const [cartItems, setCartItems] = useState(() => []);
+
+  const updateCart = () => {
+    setCartItems(getCartItems());
+  };
+
+  useEffect(() => {
+    updateCart();
+  });
+
   return (
     <div>
-      <div></div>
+      <div>{cartItems[0].name}</div>
     </div>
   );
 };
