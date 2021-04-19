@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ProductQuantity from "./ProductQuantity";
 import * as S from "../styled/Shop-styling";
 
 function ProductCard({ product, handleAddToCart, addToCartSuccessPopup }) {
@@ -37,20 +38,12 @@ function ProductCard({ product, handleAddToCart, addToCartSuccessPopup }) {
         <S.ProductName>{product.name}</S.ProductName>
         <S.ProductPrice>$ {product.price}</S.ProductPrice>
       </S.ProductDetailsContainer>
-      <S.ProductQuantity>
-        <S.ProductQuantityButton onClick={decrementQuantity}>
-          −
-        </S.ProductQuantityButton>
-        <S.ProductQuantityInput
-          type="number"
-          value={quantity}
-          min="1"
-          onChange={updateQuantity}
-        />
-        <S.ProductQuantityButton onClick={incrementQuantity}>
-          +
-        </S.ProductQuantityButton>
-      </S.ProductQuantity>
+      <ProductQuantity
+        quantity={quantity}
+        updateQuantity={updateQuantity}
+        decrementQuantity={decrementQuantity}
+        incrementQuantity={incrementQuantity}
+      />
       <S.AddToCartButton
         onClick={() => {
           handleAddToCart(product, quantity);

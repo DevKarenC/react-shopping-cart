@@ -43,6 +43,31 @@ const ContinueShoppingButton = styled.button`
   }
 `;
 
+/* CART ITEM COMPONENT */
+
+const CartItemContainer = styled.div`
+  display: flex;
+  height: 250px;
+`;
+
+const CartItemImage = styled.img`
+  box-shadow: 0 4px 8px #e2dad5;
+  border-radius: 5px;
+  width: 200px;
+  height: 200px;
+`;
+
+const CartItemDetailsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const CartItemDetailsText = styled.p`
+  font-family: "Barlow", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+`;
+
 /* ITEMS IN CART PAGE */
 
 const CartWithItemsPageSection = styled.div`
@@ -78,6 +103,10 @@ export {
   EmptyCartImage,
   EmptyCartText,
   ContinueShoppingButton,
+  CartItemContainer,
+  CartItemImage,
+  CartItemDetailsContainer,
+  CartItemDetailsText,
   CartWithItemsPageSection,
   CartItemsSection,
   TotalAmountSection,
