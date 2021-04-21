@@ -84,12 +84,35 @@ const CartItemDetailsText = styled.p`
 
 const CartWithItemsPageSection = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  width: 70vw;
+  margin: 0 auto;
 `;
 
 const CartItemsSection = styled.div``;
 
-const TotalAmountSection = styled.div``;
+const TotalAmountSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 250px;
+  width: 200px;
+`;
+
+const AmountSection = styled.div`
+  display: flex;
+  font-family: "Barlow", sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  line-height: 2.5rem;
+
+  > * {
+    &:first-child {
+      font-weight: bold;
+      flex: 1;
+    }
+  }
+`;
 
 /* NAV CART ICON BADGE */
 const Badge = styled.span`
@@ -122,5 +145,6 @@ export {
   CartWithItemsPageSection,
   CartItemsSection,
   TotalAmountSection,
+  AmountSection,
   Badge,
 };

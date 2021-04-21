@@ -1,5 +1,6 @@
 import React from "react";
 import CartItem from "./CartItem";
+import CartTotalAmount from "./CartTotalAmount";
 import * as S from "../styled/Cart-styling";
 
 const CartWithItemsPage = ({ cartItems }) => {
@@ -10,7 +11,9 @@ const CartWithItemsPage = ({ cartItems }) => {
           return <CartItem cartItem={cartItem} />;
         })}
       </S.CartItemsSection>
-      <S.TotalAmountSection></S.TotalAmountSection>
+      <S.TotalAmountSection>
+        <CartTotalAmount cartItems={cartItems} />
+      </S.TotalAmountSection>
     </S.CartWithItemsPageSection>
   );
 };
