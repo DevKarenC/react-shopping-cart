@@ -18,6 +18,7 @@ const CartTotalAmount = ({ cartItems }) => {
 
   return (
     <>
+      <S.OrderSummary>Order Summary</S.OrderSummary>
       <S.AmountSection>
         <span>Subtotal:</span>
         <span>{totalAmount}</span>
