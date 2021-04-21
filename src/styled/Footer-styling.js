@@ -10,7 +10,7 @@ const Creator = styled.p`
   letter-spacing: 2px;
   text-align: center;
   height: 32px;
-  margin-bottom: 1rem;
+  margin: 4rem 0 2rem;
 `;
 
 const GithubLink = styled.a`

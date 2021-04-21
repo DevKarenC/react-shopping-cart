@@ -13,7 +13,7 @@ const ProductSection = styled.div`
   justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2vw;
-  margin: 2rem;
+  margin-top: 2rem;
 `;
 
 const FilterSection = styled(ShopSection)`
