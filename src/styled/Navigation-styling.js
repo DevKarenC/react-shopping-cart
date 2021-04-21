@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Nav = styled.nav`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 2rem 3rem;
+  padding: 1.5rem 3rem 1rem;
 `;
 
 const Logo = styled.img`
