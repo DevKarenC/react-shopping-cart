@@ -91,7 +91,8 @@ const CartWithItemsPageSection = styled.div`
 
 const CartItemsSection = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   box-shadow: 0 4px 8px #e2dad5;
   padding: 1rem 2rem;
 `;
@@ -99,7 +100,6 @@ const CartItemsSection = styled.div`
 const TotalAmountSection = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 200px;
   box-shadow: 0 4px 8px #e2dad5;
   padding: 1rem 2rem;
@@ -134,7 +134,7 @@ const OrderSummary = styled.p`
   text-align: center;
   border-bottom: 1px dotted gray;
   padding-bottom: 1rem;
-  margin: 0 0 1rem 0;
+  margin: 1rem 0;
 `;
 
 const CheckoutButton = styled.button`
@@ -147,6 +147,7 @@ const CheckoutButton = styled.button`
   color: #fff;
   border: 0;
   border-radius: 5px;
+  cursor: pointer;
 `;
 
 /* NAV CART ICON BADGE */
