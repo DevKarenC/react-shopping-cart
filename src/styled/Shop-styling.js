@@ -18,13 +18,13 @@ const ProductSection = styled.div`
 
 const FilterSection = styled(ShopSection)`
   align-items: center;
-  margin: 1rem 0;
 `;
 
 const Results = styled.p`
   font-family: "Barlow", sans-serif;
   font-size: 1.25rem;
   letter-spacing: 1px;
+  margin-top: 0;
 `;
 
 const Filters = styled.div`

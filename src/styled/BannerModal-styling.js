@@ -5,6 +5,7 @@ const Banner = styled.div`
   justify-content: center;
   background-color: #8c6d56;
   padding: 0.3rem 0;
+  margin-bottom: 3rem;
 `;
 
 const ModalButton = styled.button`
