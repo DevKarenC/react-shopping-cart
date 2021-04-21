@@ -13,6 +13,7 @@ const CartWithItemsPage = ({ cartItems }) => {
       </S.CartItemsSection>
       <S.TotalAmountSection>
         <CartTotalAmount cartItems={cartItems} />
+        <S.CheckoutButton>Checkout</S.CheckoutButton>
       </S.TotalAmountSection>
     </S.CartWithItemsPageSection>
   );

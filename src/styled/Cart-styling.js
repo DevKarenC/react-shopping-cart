@@ -90,6 +90,8 @@ const CartWithItemsPageSection = styled.div`
 `;
 
 const CartItemsSection = styled.div`
+  display: flex;
+  align-items: center;
   box-shadow: 0 4px 8px #e2dad5;
   padding: 1rem 2rem;
 `;
@@ -98,7 +100,6 @@ const TotalAmountSection = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 250px;
   width: 200px;
   box-shadow: 0 4px 8px #e2dad5;
   padding: 1rem 2rem;
@@ -118,7 +119,7 @@ const AmountSection = styled.div`
     }
   }
 
-  &:last-child {
+  &:nth-last-child(2) {
     border-bottom: 1px dotted gray;
     padding-bottom: 1rem;
     margin: 0 0 1rem 0;
@@ -134,6 +135,18 @@ const OrderSummary = styled.p`
   border-bottom: 1px dotted gray;
   padding-bottom: 1rem;
   margin: 0 0 1rem 0;
+`;
+
+const CheckoutButton = styled.button`
+  font-family: "Barlow", sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  background-color: #8c6d56;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
 `;
 
 /* NAV CART ICON BADGE */
@@ -169,5 +182,6 @@ export {
   TotalAmountSection,
   AmountSection,
   OrderSummary,
+  CheckoutButton,
   Badge,
 };
