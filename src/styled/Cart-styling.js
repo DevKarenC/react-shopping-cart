@@ -47,25 +47,37 @@ const ContinueShoppingButton = styled.button`
 
 const CartItemContainer = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   height: 250px;
 `;
 
 const CartItemImage = styled.img`
   box-shadow: 0 4px 8px #e2dad5;
   border-radius: 5px;
+  margin-right: 1rem;
   width: 200px;
   height: 200px;
+  flex: 1;
 `;
 
 const CartItemDetailsContainer = styled.div`
   display: flex;
+  justify-content: center;
   flex-direction: column;
+  height: 200px;
+  flex: 2;
 `;
 
 const CartItemDetailsText = styled.p`
   font-family: "Barlow", sans-serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
   letter-spacing: 1px;
+  margin: 0.5rem;
+
+  &:first-child {
+    font-weight: bold;
+  }
 `;
 
 /* ITEMS IN CART PAGE */

@@ -8,7 +8,7 @@ const CartItem = ({ cartItem }) => {
       <S.CartItemDetailsContainer>
         <S.CartItemDetailsText>{cartItem.name}</S.CartItemDetailsText>
         <S.CartItemDetailsText>$ {cartItem.price}</S.CartItemDetailsText>
-        <S.CartItemDetailsText>{cartItem.qty} in Cart</S.CartItemDetailsText>
+        <S.CartItemDetailsText>Qty: {cartItem.qty}</S.CartItemDetailsText>
       </S.CartItemDetailsContainer>
     </S.CartItemContainer>
   );
