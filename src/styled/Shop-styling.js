@@ -120,6 +120,12 @@ const ProductQuantityInput = styled.input`
   border: 2px solid #8c6d56;
   outline: 0;
   appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `;
 
 const AddToCartButton = styled.button`
