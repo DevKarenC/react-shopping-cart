@@ -5,7 +5,7 @@ import * as S from "../styled/Shop-styling";
 function ProductCard({ product, handleAddToCart, addToCartSuccessPopup }) {
   const [quantity, setQuantity] = useState(() => 1);
 
-  const updateQuantity = (e) => {
+  const updateItemQuantity = (e) => {
     setQuantity(Number(e.target.value));
   };
 
@@ -40,7 +40,7 @@ function ProductCard({ product, handleAddToCart, addToCartSuccessPopup }) {
       </S.ProductDetailsContainer>
       <ProductQuantity
         quantity={quantity}
-        updateQuantity={updateQuantity}
+        updateItemQuantity={updateItemQuantity}
         decrementQuantity={decrementQuantity}
         incrementQuantity={incrementQuantity}
       />

@@ -3,7 +3,7 @@ import * as S from "../styled/Shop-styling";
 
 const ProductQuantity = ({
   quantity,
-  updateQuantity,
+  updateItemQuantity,
   decrementQuantity,
   incrementQuantity,
 }) => {
@@ -16,7 +16,7 @@ const ProductQuantity = ({
         type="number"
         value={quantity}
         min="1"
-        onChange={updateQuantity}
+        onChange={updateItemQuantity}
       />
       <S.ProductQuantityButton onClick={incrementQuantity}>
         +

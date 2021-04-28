@@ -9,6 +9,7 @@ const CartItem = ({ cartItem }) => {
         <S.CartItemDetailsText>{cartItem.name}</S.CartItemDetailsText>
         <S.CartItemDetailsText>$ {cartItem.price}</S.CartItemDetailsText>
         <S.CartItemDetailsText>Qty: {cartItem.qty}</S.CartItemDetailsText>
+        <S.CartItemDetailsText></S.CartItemDetailsText>
       </S.CartItemDetailsContainer>
     </S.CartItemContainer>
   );

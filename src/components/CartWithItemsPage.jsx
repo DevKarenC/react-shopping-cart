@@ -8,7 +8,7 @@ const CartWithItemsPage = ({ cartItems }) => {
     <S.CartWithItemsPageSection>
       <S.CartItemsSection>
         {cartItems.map((cartItem) => {
-          return <CartItem cartItem={cartItem} />;
+          return <CartItem key={cartItem.id} cartItem={cartItem} />;
         })}
       </S.CartItemsSection>
       <S.TotalAmountSection>

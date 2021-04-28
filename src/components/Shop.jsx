@@ -3,7 +3,7 @@ import ProductCard from "./ProductCard";
 import { productDetails } from "../constants/productDetails";
 import * as S from "../styled/Shop-styling";
 
-const Shop = ({ handleAddToCart, addToCartSuccessPopup }) => {
+const Shop = ({ handleAddToCart, updateQuantity, addToCartSuccessPopup }) => {
   let [sortType, setSortType] = useState(productDetails);
   const onClickSetSortType = (filter) => {
     if (filter === "sortByLimited") {
@@ -47,6 +47,7 @@ const Shop = ({ handleAddToCart, addToCartSuccessPopup }) => {
               product={product}
               key={product.id}
               handleAddToCart={handleAddToCart}
+              updateQuantity={updateQuantity}
               addToCartSuccessPopup={addToCartSuccessPopup}
             />
           );
