@@ -6,7 +6,9 @@ const CartItem = ({ cartItem, handleAddToCart }) => {
   const [quantity, setQuantity] = useState(() => cartItem.qty);
 
   const updateItemQuantity = (e) => {
+    const newQuantity = quantity;
     setQuantity(Number(e.target.value));
+    handleAddToCart(cartItem, Number(e.target.value) - newQuantity);
   };
 
   const decrementQuantity = () => {
@@ -14,15 +16,15 @@ const CartItem = ({ cartItem, handleAddToCart }) => {
       if (prevQuantity > 2) return prevQuantity - 1;
       return 1;
     });
+    if (quantity >= 2) {
+      handleAddToCart(cartItem, -1);
+    }
   };
 
   const incrementQuantity = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
+    handleAddToCart(cartItem, 1);
   };
-
-  useEffect(() => {
-    handleAddToCart(cartItem, quantity);
-  }, [cartItem, quantity]);
 
   return (
     <S.CartItemContainer>

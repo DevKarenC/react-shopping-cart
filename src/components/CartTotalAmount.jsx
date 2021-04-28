@@ -7,11 +7,7 @@ const CartTotalAmount = ({ cartItems }) => {
   const updateTotalAmount = () => {
     setTotalAmount(
       cartItems.reduce((total, cur) => {
-        return (
-          (Math.round(total + Number(cur.price) * cur.qty + Number.EPSILON) *
-            100) /
-          100
-        );
+        return total + Number(cur.price) * cur.qty;
       }, 0)
     );
   };
