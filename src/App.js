@@ -13,8 +13,8 @@ const App = () => {
   const [cartItems, setCartItems] = useState(() => []);
 
   const handleAddToCart = (item, qty) => {
-    let clicked = false;
-    if (!clicked) {
+    let isClicked = false;
+    if (!isClicked) {
       setCartItems((prevCartItems) => {
         // if the same item already exists in the cart, update quantity
         if (prevCartItems.find((el) => el.id === item.id)) {
@@ -25,11 +25,11 @@ const App = () => {
             (prevItem) => prevItem.id === item.id
           );
           duplicateItem[0].qty += qty;
-          clicked = true;
+          isClicked = true;
           return [...uniqueItems, ...duplicateItem];
           // if there are no duplicate items, append the new item to the existing cart items
         } else {
-          clicked = true;
+          isClicked = true;
           return [...prevCartItems, { ...item, qty }];
         }
       });

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as S from "../styled/Cart-styling";
+import roundTo from "round-to";
 
 const CartTotalAmount = ({ cartItems }) => {
   const [totalAmount, setTotalAmount] = useState(() => 0);
@@ -7,7 +8,7 @@ const CartTotalAmount = ({ cartItems }) => {
   const updateTotalAmount = () => {
     setTotalAmount(
       cartItems.reduce((total, cur) => {
-        return total + Number(cur.price) * cur.qty;
+        return roundTo(total + Number(cur.price) * cur.qty, 2);
       }, 0)
     );
   };
