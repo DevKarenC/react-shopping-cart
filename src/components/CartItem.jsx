@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProductQuantity from "./ProductQuantity";
 import * as S from "../styled/Cart-styling";
 
-const CartItem = ({ cartItem }) => {
+const CartItem = ({ cartItem, handleAddToCart }) => {
   const [quantity, setQuantity] = useState(() => cartItem.qty);
 
   const updateItemQuantity = (e) => {
@@ -20,20 +20,22 @@ const CartItem = ({ cartItem }) => {
     setQuantity((prevQuantity) => prevQuantity + 1);
   };
 
+  useEffect(() => {
+    handleAddToCart(cartItem, quantity);
+  }, [cartItem, quantity]);
+
   return (
     <S.CartItemContainer>
       <S.CartItemImage src={cartItem.imgSrc} alt={cartItem.imgAlt} />
       <S.CartItemDetailsContainer>
         <S.CartItemDetailsText>{cartItem.name}</S.CartItemDetailsText>
         <S.CartItemDetailsText>$ {cartItem.price}</S.CartItemDetailsText>
-        {/* <S.CartItemDetailsText>Qty: {cartItem.qty}</S.CartItemDetailsText> */}
         <ProductQuantity
           quantity={quantity}
           updateItemQuantity={updateItemQuantity}
           decrementQuantity={decrementQuantity}
           incrementQuantity={incrementQuantity}
         />
-        <S.CartItemDetailsText></S.CartItemDetailsText>
       </S.CartItemDetailsContainer>
     </S.CartItemContainer>
   );

@@ -13,22 +13,27 @@ const App = () => {
   const [cartItems, setCartItems] = useState(() => []);
 
   const handleAddToCart = (item, qty) => {
-    setCartItems((prevCartItems) => {
-      // if the same item already exists in the cart, update quantity
-      if (prevCartItems.find((el) => el.id === item.id)) {
-        const uniqueItems = prevCartItems.filter(
-          (prevItem) => prevItem.id !== item.id
-        );
-        const duplicateItem = prevCartItems.filter(
-          (prevItem) => prevItem.id === item.id
-        );
-        duplicateItem[0].qty += qty;
-        return [...uniqueItems, ...duplicateItem];
-        // if there are no duplicate items, append the new item to the existing cart items
-      } else {
-        return [...prevCartItems, { ...item, qty }];
-      }
-    });
+    let clicked = false;
+    if (!clicked) {
+      setCartItems((prevCartItems) => {
+        // if the same item already exists in the cart, update quantity
+        if (prevCartItems.find((el) => el.id === item.id)) {
+          const uniqueItems = prevCartItems.filter(
+            (prevItem) => prevItem.id !== item.id
+          );
+          const duplicateItem = prevCartItems.filter(
+            (prevItem) => prevItem.id === item.id
+          );
+          duplicateItem[0].qty += qty;
+          clicked = true;
+          return [...uniqueItems, ...duplicateItem];
+          // if there are no duplicate items, append the new item to the existing cart items
+        } else {
+          clicked = true;
+          return [...prevCartItems, { ...item, qty }];
+        }
+      });
+    }
   };
 
   // allow the Cart component to retrieve the cartItems from App
@@ -64,7 +69,7 @@ const App = () => {
           <Menu />
         </Route>
         <Route exact path="/cart">
-          <Cart getCartItems={getCartItems} />
+          <Cart handleAddToCart={handleAddToCart} getCartItems={getCartItems} />
         </Route>
       </Switch>
       <Footer />
