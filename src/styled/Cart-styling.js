@@ -50,6 +50,10 @@ const CartItemContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
   height: 250px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+  }
 `;
 
 const CartItemImage = styled.img`
