@@ -18,6 +18,7 @@ const ProductSection = styled.div`
 
 const FilterSection = styled(ShopSection)`
   align-items: center;
+  margin-top: 3rem;
 `;
 
 const Results = styled.p`

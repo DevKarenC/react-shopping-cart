@@ -86,7 +86,7 @@ const CartWithItemsPageSection = styled.div`
   display: flex;
   justify-content: space-evenly;
   width: 70vw;
-  margin: 0 auto;
+  margin: 4rem auto;
 `;
 
 const CartItemsSection = styled.div`

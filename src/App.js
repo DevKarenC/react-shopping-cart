@@ -27,8 +27,9 @@ const App = () => {
           duplicateItem[0].qty += qty;
           isClicked = true;
           return [...uniqueItems, ...duplicateItem];
-          // if there are no duplicate items, append the new item to the existing cart items
-        } else {
+        }
+        // if there are no duplicate items, append the new item to the existing cart items
+        else {
           isClicked = true;
           return [...prevCartItems, { ...item, qty }];
         }

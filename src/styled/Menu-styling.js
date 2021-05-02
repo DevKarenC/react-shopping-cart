@@ -6,7 +6,7 @@ const MenuSection = styled.div`
   justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2vw;
-  margin: 0 2rem;
+  margin: 2rem;
 `;
 
 /* MenuItemCard Styling */
