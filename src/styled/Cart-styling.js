@@ -68,6 +68,7 @@ const CartItemImage = styled.img`
 const CartItemDetailsContainer = styled.div`
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   flex-direction: column;
   height: 200px;
   flex: 2;
@@ -77,11 +78,24 @@ const CartItemDetailsText = styled.p`
   font-family: "Barlow", sans-serif;
   font-size: 1.25rem;
   letter-spacing: 1px;
-  margin: 0.5rem;
+  margin: 0.5rem 0;
 
   &:first-child {
     font-weight: bold;
   }
+`;
+
+const DeleteButton = styled.button`
+  display: flex;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  cursor: pointer;
+  color: #7b4819;
+  border: 0;
+  background: transparent;
+  font-size: 1.25rem;
 `;
 
 /* ITEMS IN CART PAGE */
@@ -184,6 +198,7 @@ export {
   CartItemDetailsText,
   CartWithItemsPageSection,
   CartItemsSection,
+  DeleteButton,
   TotalAmountSection,
   AmountSection,
   OrderSummary,
