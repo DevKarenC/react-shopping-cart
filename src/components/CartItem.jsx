@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import * as S from "../styled/Cart-styling";
 
-const CartItem = ({ cartItem, handleAddToCart }) => {
+const CartItem = ({ cartItem, handleAddToCart, deleteCartItem }) => {
   const [quantity, setQuantity] = useState(() => cartItem.qty);
 
   const updateItemQuantity = (e) => {
@@ -41,7 +41,10 @@ const CartItem = ({ cartItem, handleAddToCart }) => {
           incrementQuantity={incrementQuantity}
         />
         <S.DeleteButton>
-          <FontAwesomeIcon icon={faTrashAlt} />
+          <FontAwesomeIcon
+            icon={faTrashAlt}
+            onClick={() => deleteCartItem(cartItem.id)}
+          />
         </S.DeleteButton>
       </S.CartItemDetailsContainer>
     </S.CartItemContainer>

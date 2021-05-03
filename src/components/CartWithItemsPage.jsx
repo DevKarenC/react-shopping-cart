@@ -3,7 +3,7 @@ import CartItem from "./CartItem";
 import CartTotalAmount from "./CartTotalAmount";
 import * as S from "../styled/Cart-styling";
 
-const CartWithItemsPage = ({ cartItems, handleAddToCart }) => {
+const CartWithItemsPage = ({ cartItems, handleAddToCart, deleteCartItem }) => {
   return (
     <S.CartWithItemsPageSection>
       <S.CartItemsSection>
@@ -13,6 +13,7 @@ const CartWithItemsPage = ({ cartItems, handleAddToCart }) => {
               key={cartItem.id}
               cartItem={cartItem}
               handleAddToCart={handleAddToCart}
+              deleteCartItem={deleteCartItem}
             />
           );
         })}

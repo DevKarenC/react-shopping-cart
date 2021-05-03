@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import EmptyCartPage from "./EmptyCartPage";
 import CartWithItemsPage from "./CartWithItemsPage";
 
-const Cart = ({ getCartItems, handleAddToCart }) => {
+const Cart = ({ getCartItems, handleAddToCart, deleteCartItem }) => {
   const [cartItems, setCartItems] = useState(() => []);
 
   const updateCart = () => {
@@ -21,6 +21,7 @@ const Cart = ({ getCartItems, handleAddToCart }) => {
         <CartWithItemsPage
           cartItems={cartItems}
           handleAddToCart={handleAddToCart}
+          deleteCartItem={deleteCartItem}
         />
       )}
     </>

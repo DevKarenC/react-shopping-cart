@@ -12,6 +12,7 @@ import * as S from "./styled/Global-styling";
 const App = () => {
   const [cartItems, setCartItems] = useState(() => []);
 
+  // handle add items to the cart
   const handleAddToCart = (item, qty) => {
     let isClicked = false;
     if (!isClicked) {
@@ -35,6 +36,14 @@ const App = () => {
         }
       });
     }
+  };
+
+  // delete item from the cart
+  const deleteCartItem = (idToBeDeleted) => {
+    setCartItems((prevCartItems) => {
+      return prevCartItems.filter((item) => item.id !== idToBeDeleted);
+    });
+    console.log(idToBeDeleted);
   };
 
   // allow the Cart component to retrieve the cartItems from App
@@ -70,7 +79,11 @@ const App = () => {
           <Menu />
         </Route>
         <Route exact path="/cart">
-          <Cart handleAddToCart={handleAddToCart} getCartItems={getCartItems} />
+          <Cart
+            handleAddToCart={handleAddToCart}
+            getCartItems={getCartItems}
+            deleteCartItem={deleteCartItem}
+          />
         </Route>
       </Switch>
       <Footer />
